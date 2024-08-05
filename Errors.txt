@@ -1,0 +1,33 @@
+#Store is a typo in the Marvel-DC config - Fixed (DC P2, Line 1)
+
+#Got invalid creds on the very last step on Marvel-DC - Fixed (Create-PEHLab, Line 51) 'marvel\Administrator' works
+
+ThePunisher	invalid cred	multiple errors, check the creds passed to ThePunisher VM and creds in the PS1
+Happened after changing the VM's name from Changeme to The Punisher
+
+FrankCastle was not found on Spiderman while trying to add to local admins - Fixed (Spiderman P1, Line 42)
+
+Spiderman	invalid cred
+Happened 3x after changin the VM's name from Changeme to Spiderman
+
+
+--- break ---
+
+Fix the IP, DNS, etc config file for all machines. 
+GitHub screwed up the quotes, which is causing the DNS config to not take. -Fixing, DC & Spider G2G, check ThePunisher
+
+Double check the creds used to run PS1 configs on ThePunisher & Spiderman. -Fixed (Create-PEH, Lines 81 & 94)
+
+DC P3 - tweak all the PasswordNeverExpires to add $true - Fixed (DC P3, all 4 accounts)
+
+--- IPv6 ---
+
+IPv6 must be disabled for the VMs to join the domain, otherwise they try to pull their DNS from the home RTR. - Fixed
+
+--- Cleanup.ps1 ---
+
+Re-name and tune the copy in the PEH folder so it removes all three VMs. - Decided against, can remove them 1 at a time
+
+--- Take 2 ---
+
+Check the part of DC P3 that moves the groups. Got a bunch of errors RE ObjectNotFound with group names. - Fixed (typo)
